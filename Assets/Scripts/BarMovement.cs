@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BarMovement : MonoBehaviour
 {
-    public float speed = 5f; // speed of the bar
+    public float speed = 1f; // speed of the bar
     public Transform leftLimit; // left boundary
     public Transform rightLimit; // right boundary 
 
@@ -59,7 +59,7 @@ public class BarMovement : MonoBehaviour
 
         currentBox.transform.localPosition = new Vector3(0, -1f, 0);
 
-        Rigidbody2D rb = currentBox.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = currentBox.GetComponent<Rigidbody2D>(); // access to the rigid body physics assigned to the current box prefab 
         rb.simulated = false; // Disable physics when the box is attached 
     }
 
