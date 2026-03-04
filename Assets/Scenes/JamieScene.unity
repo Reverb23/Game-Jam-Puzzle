@@ -416,7 +416,7 @@ Transform:
   m_GameObject: {fileID: 140509806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.34, y: -0.07, z: 0}
   m_LocalScale: {x: 0.41547513, y: 0.46367285, z: 0.5943}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed29bef2bc922a64fa606c5548b442f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  snapEffect: {fileID: 5560248580373189804, guid: 4c74623d14a36694d89d3c7c472aa5c0, type: 3}
 --- !u!1 &725330549
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed29bef2bc922a64fa606c5548b442f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  snapEffect: {fileID: 5560248580373189804, guid: 4c74623d14a36694d89d3c7c472aa5c0, type: 3}
 --- !u!50 &725330551
 Rigidbody2D:
   serializedVersion: 5
@@ -605,13 +607,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725330549}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: 3.74, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.00017174149, w: 1}
+  m_LocalPosition: {x: 0.62, y: 3.72, z: 0}
   m_LocalScale: {x: 0.41547513, y: 0.46367285, z: 0.5943}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.02}
 --- !u!1 &760872547
 GameObject:
   m_ObjectHideFlags: 0
