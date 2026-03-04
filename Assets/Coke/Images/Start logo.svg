@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1080 1920">
+  <!-- Generator: Adobe Illustrator 29.8.5, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #d34d44;
+        stroke: #fff;
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9 {
+        stroke-miterlimit: 10;
+      }
+
+      .st10 {
+        font-family: RushDriver-Italic, 'Rush Driver';
+        font-size: 150.9px;
+        font-style: italic;
+      }
+
+      .st10, .st11 {
+        isolation: isolate;
+      }
+
+      .st1 {
+        fill: #f39421;
+      }
+
+      .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9 {
+        stroke: #000;
+      }
+
+      .st2 {
+        fill: #fcca7a;
+      }
+
+      .st3, .st12 {
+        fill: #f6bf59;
+      }
+
+      .st4 {
+        fill: #fdbb59;
+      }
+
+      .st13, .st8 {
+        fill: #f6932e;
+      }
+
+      .st5 {
+        fill: #ec6440;
+      }
+
+      .st6 {
+        fill: #e6e7e8;
+      }
+
+      .st7 {
+        fill: #eb633e;
+      }
+
+      .st9 {
+        fill: #fefdd1;
+      }
+    </style>
+  </defs>
+  <g id="Colours">
+    <rect class="st6" x="-1455.55" y="-310.75" width="602.22" height="1435.56"/>
+    <rect class="st0" x="-1383.69" y="-231.86" width="153.33" height="153.33"/>
+    <rect class="st5" x="-1078.52" y="-231.86" width="153.33" height="153.33"/>
+    <rect class="st7" x="-1383.69" y="-11.86" width="153.33" height="153.33"/>
+    <rect class="st1" x="-1078.52" y="-11.86" width="153.33" height="153.33"/>
+    <rect class="st8" x="-1383.69" y="237.02" width="153.33" height="153.33"/>
+    <rect class="st3" x="-1078.52" y="237.02" width="153.33" height="153.33"/>
+    <rect class="st9" x="-1383.69" y="485.91" width="153.33" height="153.33"/>
+    <rect class="st2" x="-1078.52" y="485.91" width="153.33" height="153.33"/>
+    <rect class="st4" x="-1231.11" y="734.8" width="153.33" height="153.33"/>
+  </g>
+  <rect class="st13" x="154.47" y="512.47" width="804.44" height="289.13" rx="46.67" ry="46.67"/>
+  <g>
+    <rect class="st12" x="121.09" y="485.91" width="804.44" height="289.13" rx="46.67" ry="46.67"/>
+    <g class="st11">
+      <text class="st10" transform="translate(273.8 677.6)"><tspan x="0" y="0">Start</tspan></text>
+    </g>
+  </g>
+</svg>
