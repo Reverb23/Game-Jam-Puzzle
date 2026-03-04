@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7787ff9ffde25bc46b8138f4b2b41f68
+guid: 9cbf47093554a814f8e3dca7764f54d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3493653115060459985
-    second: crate_sprite_0
+      213: -7004985251342126971
+    second: red city landscape_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crate_sprite_0
+      name: red city landscape_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 1080
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f266264800d048fc0800000000000000
-      internalID: -3493653115060459985
+      spriteID: 580f6e4270b49ce90800000000000000
+      internalID: -7004985251342126971
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      crate_sprite_0: -3493653115060459985
+      red city landscape_0: -7004985251342126971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

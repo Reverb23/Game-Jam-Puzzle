@@ -2,6 +2,9 @@ using UnityEngine; // access to unity's core features like Rigidbody2D
 
 public class BoxCollision : MonoBehaviour
 {
+
+    public GameObject snapEffect;
+
     private bool checkedPlacement = false; // prevents placement logic to keep running, can only be checked once 
 
     // automatically runs when object first collides with another object 
@@ -36,14 +39,28 @@ public class BoxCollision : MonoBehaviour
         // calculate 50% of the current box's width = minimum overlap required for valid placement 
         float requiredOverlap = myCollider.bounds.size.x * 0.5f;
 
+
         if (overlap >= requiredOverlap)
         {
             // If at least half of the box is supported:
-
             rb.linearVelocity = Vector2.zero; // stop all movement 
             rb.angularVelocity = 0f; // stop any rotation 
             rb.bodyType = RigidbodyType2D.Static; // convert the box to static
+
+            // Snap this bos's x-position to the box below:
+            Vector3 newPos = transform.position;
+            newPos.x = Mathf.Clamp(transform.position.x, otherLeft + myCollider.bounds.size.x / 2, otherRight - myCollider.bounds.size.x / 2);
+            transform.position = newPos;
+
+            // play particle effect at this box's position 
+            if (snapEffect != null)
+            {
+                GameObject effect = Instantiate(snapEffect, transform.position, Quaternion.identity);
+                ParticleSystem ps = effect.GetComponent<ParticleSystem>();
+                if (ps != null) ps.Play();
+            }
         }
+
         else
         {
             // If less than half is supported:
