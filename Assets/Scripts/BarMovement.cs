@@ -57,7 +57,7 @@ public class BarMovement : MonoBehaviour
 
         currentBox.transform.parent = transform;
 
-        currentBox.transform.localPosition = new Vector3(0, -1f, 0);
+        currentBox.transform.localPosition = new Vector3(0, -2.5f, 0); // height from crane hand
 
         Rigidbody2D rb = currentBox.GetComponent<Rigidbody2D>(); // access to the rigid body physics assigned to the current box prefab 
         rb.simulated = false; // Disable physics when the box is attached 
