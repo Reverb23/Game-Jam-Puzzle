@@ -203,7 +203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235836161}
-  - component: {fileID: 235836162}
   - component: {fileID: 235836163}
   m_Layer: 5
   m_Name: HealthBar
@@ -235,19 +234,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000014663, y: -0.0000095367}
   m_SizeDelta: {x: 356.7232, y: 14.8375}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &235836162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235836160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e466f8304e444af4d9123e9dafe1fe80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  slider: {fileID: 235836163}
 --- !u!114 &235836163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,7 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Playercalc
   maxHealth: 3
   currentHealth: 0
-  healthBar: {fileID: 235836162}
+  healthBar: {fileID: 0}
 --- !u!224 &1925764928
 RectTransform:
   m_ObjectHideFlags: 0

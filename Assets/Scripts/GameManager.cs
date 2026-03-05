@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         startUI.SetActive(false);
         Time.timeScale = 1f;
         gameStarted = true;
+        SceneManager.LoadSceneAsync("ScarlettScene");
     }
 
     public void WinGame()
