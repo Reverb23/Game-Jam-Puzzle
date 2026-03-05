@@ -1,50 +1,125 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject startUI;
-    public GameObject winUI;
-    public GameObject loseUI;
+    public static GameManager instance;
 
-    private bool gameStarted = false;
+    public int maxHealth = 3;
+    public int currentHealth;
+
+    public Slider healthBar;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
-        Time.timeScale = 0f; // pause game
-        startUI.SetActive(true);
-        winUI.SetActive(false);
-        loseUI.SetActive(false);
+        currentHealth = maxHealth;
+
+        healthBar.maxValue = maxHealth;
+        healthBar.value = currentHealth;
     }
 
-    public void StartGame()
+    public void BlockFell()
     {
-        startUI.SetActive(false);
-        Time.timeScale = 1f;
-        gameStarted = true;
-        SceneManager.LoadSceneAsync("ScarlettScene");
+        currentHealth--;
+
+        healthBar.value = currentHealth;
+
+        if (currentHealth <= 0)
+        {
+            GameOver();
+        }
+
     }
 
-    public void WinGame()
+    void GameOver()
     {
-        Time.timeScale = 0f;
-        winUI.SetActive(true);
+        Debug.Log("Game Over");
     }
 
-    public void LoseGame()
-    {
-        Time.timeScale = 0f;
-        loseUI.SetActive(true);
-        SceneManager.LoadSceneAsync("loseUI");
-    }
 
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void NextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    public GameObject startUI;
+//    public GameObject winUI;
+//    public GameObject loseUI;
+
+//    private bool gameStarted = false;
+
+//    void Start()
+//    {
+//        Time.timeScale = 0f; // pause game
+//        startUI.SetActive(true);
+//        winUI.SetActive(false);
+//        loseUI.SetActive(false);
+//    }
+
+//    // Detecting block fell function 
+//    public void BlockFell()
+//    {
+//        if (currentState != GameState.Playing) return;
+
+//        currentHealth--;
+
+//        healthBar.value = currentHealth;
+
+//        if (currentHealth <= 0)
+//        {
+//            LoseGame();
+//        }
+
+//    }
+
+
+
+//    public void StartGame()
+//    {
+//        startUI.SetActive(false);
+//        Time.timeScale = 1f;
+//        gameStarted = true;
+//        SceneManager.LoadSceneAsync("ScarlettScene");
+//    }
+
+//    public void WinGame()
+//    {
+//        Time.timeScale = 0f;
+//        winUI.SetActive(true);
+//    }
+
+//    public void LoseGame()
+//    {
+//        Time.timeScale = 0f;
+//        loseUI.SetActive(true);
+//        SceneManager.LoadSceneAsync("loseUI");
+//    }
+
+//    public void RestartLevel()
+//    {
+//        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+//    }
+
+//    public void NextLevel()
+//    {
+//        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+//    }
+//}
