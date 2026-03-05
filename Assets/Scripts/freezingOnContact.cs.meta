@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: ed29bef2bc922a64fa606c5548b442f8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - snapEffect: {fileID: 5560248580373189804, guid: 4c74623d14a36694d89d3c7c472aa5c0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
