@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   maxHealth: 3
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1456287463}
 --- !u!4 &154115123
 Transform:
   m_ObjectHideFlags: 0
@@ -1068,7 +1068,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405331794}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

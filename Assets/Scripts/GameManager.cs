@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public Slider healthBar;
 
+    private bool firstBlockFell = false; // ignore the first box 
+
     private void Awake()
     {
         instance = this;
@@ -27,8 +29,13 @@ public class GameManager : MonoBehaviour
 
     public void BlockFell()
     {
-        currentHealth--;
+        if (!firstBlockFell)
+        {
+            firstBlockFell = true;
+            return;
+        }
 
+        currentHealth--;
         healthBar.value = currentHealth;
 
         if (currentHealth <= 0)
