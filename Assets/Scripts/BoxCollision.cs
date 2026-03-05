@@ -52,7 +52,7 @@ public class BoxCollision : MonoBehaviour
             newPos.x = Mathf.Clamp(transform.position.x, otherLeft + myCollider.bounds.size.x / 2, otherRight - myCollider.bounds.size.x / 2);
             transform.position = newPos;
 
-            // play particle effect at this box's position 
+            // play particle effect at this box's  position 
             if (snapEffect != null)
             {
                 GameObject effect = Instantiate(snapEffect, transform.position, Quaternion.identity);
