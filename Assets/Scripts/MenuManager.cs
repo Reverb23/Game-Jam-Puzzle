@@ -1,15 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour
+
+public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        // Load the main game scene
-        SceneManager.LoadSceneAsync("ScarlettScene");
+        SceneManager.LoadScene("Level1");
     }
+
     public void QuitGame()
     {
-        // Quit the application
         Application.Quit();
+        Debug.Log("Quit Game"); // works in editor
     }
 }

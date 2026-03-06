@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class WinZone : MonoBehaviour
 {
-    public float requiredStayTime = 2f; // Time stack must stay above height
+    public float requiredStayTime = 1.5f; // Time stack must stay above height
     private float stayTime = 0f;
     private bool boxInside = false;
     public string LoseUI; // Name of the lose scene to load
