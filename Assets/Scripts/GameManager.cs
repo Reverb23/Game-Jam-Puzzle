@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
 
     private bool gameStarted = false;
+    private bool gameOver = false;
 
     private void Awake()
     {
@@ -89,30 +90,39 @@ public class GameManager : MonoBehaviour
         if (!gameStarted) return;
 
         boxesStacked++;
+        Debug.Log("Boxes stacked: " + boxesStacked);
+
         if (boxesStacked >= boxesNeededToWin)
         {
+            Debug.Log("Win condition met");
             WinGame();
         }
     }
 
     private void WinGame()
     {
-        Debug.Log("You Win!");
+        Debug.Log("WinGame triggered!");
+        if (gameOver) return;
+        gameOver = true;
+
         Time.timeScale = 0f;
-        if (winPanel != null) winPanel.SetActive(true);
+        winPanel.SetActive(true);
     }
+
 
     private void LoseGame()
     {
-        Debug.Log("Game Over");
+        if (gameOver) return;
+        gameOver = true;
+
         Time.timeScale = 0f;
-        if (losePanel != null) losePanel.SetActive(true);
+        losePanel.SetActive(true);
     }
 
     // UI Button - Restart current level
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // reset time
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -121,8 +131,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
         if (nextLevel >= SceneManager.sceneCountInBuildSettings)
-            nextLevel = 0;
-        SceneManager.LoadScene(nextLevel);
+            SceneManager.LoadScene("MainMenu"); // optional, loop to main menu at last level
+        else
+            SceneManager.LoadScene(nextLevel);
+    }
+
+    public void QuitToMenu()
+    {
+        Time.timeScale = 1f; // resume time
+        SceneManager.LoadScene("MainMenu");
     }
 }
