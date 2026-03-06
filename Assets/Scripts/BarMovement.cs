@@ -15,6 +15,7 @@ public class BarMovement : MonoBehaviour
     void Start()
     {
         SpawnNewBox();
+        Time.timeScale = 1f;
     }
 
 

@@ -1,11 +1,14 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 public class WinZone : MonoBehaviour
 {
     public float requiredStayTime = 1.5f; // Time stack must stay above height
-    private float stayTime = 0f;
+    private float stayTime = 1f;
     private bool boxInside = false;
     public string LoseUI; // Name of the lose scene to load
+    public string winPanel;
     void Update()
     {
         if (boxInside)
@@ -41,5 +44,7 @@ public class WinZone : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("LoseUI"); // Load the win scene (make sure to set this up in your build settings)
         Time.timeScale = 0f; // pause game
+        GameManager.instance.WinGame();
+
     }
 }

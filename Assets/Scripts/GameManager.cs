@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
     private bool firstBlockFell = false; // ignore the first box 
 
     [Header("Win Condition")]
-    public int boxesNeededToWin = 10;
-    private int boxesStacked = 0;
+    //public int boxesNeededToWin = 10;
+    //private int boxesStacked = 0;
+    public Collider2D winBarrier;
+    private bool hasWon = false;
 
     [Header("UI Panels")]
     public GameObject startUI; 
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
 
     private bool gameStarted = false;
+    private bool gameOver = false;
 
     private void Awake()
     {
@@ -42,11 +45,6 @@ public class GameManager : MonoBehaviour
             healthBar.value = currentHealth;
         }
 
-        // Pause game at start unil StartGame()
-        //Time.timeScale = 0f;
-
-        // Show start UI, hide others 
-        //if (startUI != null) startUI.SetActive(true);
         if (winPanel != null) winPanel.SetActive(false);
         if (losePanel != null) losePanel.SetActive(false);
     }
@@ -79,50 +77,77 @@ public class GameManager : MonoBehaviour
         {
             LoseGame();
         }
-
     }
+
+    public void BoxHitBarrier()
+    {
+        if (hasWon || !gameStarted) return;
+        hasWon = true;
+
+        WinGame();
+    }
+
 
     // Called when a box is successfully stacked
     // Increments a counter, game won when meet target number
-    public void BoxPlaced()
-    {
-        if (!gameStarted) return;
+    //public void BoxPlaced()
+    //{
+    //    //if (!gameStarted) return;
 
-        boxesStacked++;
-        if (boxesStacked >= boxesNeededToWin)
-        {
-            WinGame();
-        }
-    }
+    //    boxesStacked++;
+    //    Debug.Log("Boxes stacked: " + boxesStacked);
 
-    private void WinGame()
+    //    if (boxesStacked >= boxesNeededToWin)
+    //    {
+    //        Debug.Log("Win condition met");
+    //        WinGame();
+    //    }
+    //}
+
+    public void WinGame()
     {
-        Debug.Log("You Win!");
+        Debug.Log("WinGame triggered!");
+        if (gameOver) return;
+        gameOver = true;
+
         Time.timeScale = 0f;
-        if (winPanel != null) winPanel.SetActive(true);
+        winPanel.SetActive(true);
     }
+
 
     private void LoseGame()
     {
-        Debug.Log("Game Over");
+        if (gameOver) return;
+        gameOver = true;
+
         Time.timeScale = 0f;
-        if (losePanel != null) losePanel.SetActive(true);
+        if (losePanel != null)
+            losePanel.SetActive(true);
     }
 
     // UI Button - Restart current level
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // reset time
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // UI Button - Load next level (loops back to first if last)
     public void NextLevel()
     {
+        Debug.Log("ajddjoawdaidi");
         Time.timeScale = 1f;
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
         if (nextLevel >= SceneManager.sceneCountInBuildSettings)
-            nextLevel = 0;
-        SceneManager.LoadScene(nextLevel);
+            SceneManager.LoadScene("MainMenu"); // optional, loop to main menu at last level
+        else
+            SceneManager.LoadScene(nextLevel);
+    }
+
+    public void QuitToMenu()
+    {
+        Time.timeScale = 1f; // resume time
+        SceneManager.LoadScene("MainMenu");
     }
 }

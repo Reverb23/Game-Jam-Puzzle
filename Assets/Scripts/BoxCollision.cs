@@ -4,6 +4,7 @@ public class BoxCollision : MonoBehaviour
 {
 
     public GameObject snapEffect;
+    [SerializeField] private GameManager gm;
 
     private bool checkedPlacement = false; // prevents placement logic to keep running, can only be checked once 
 
@@ -12,10 +13,20 @@ public class BoxCollision : MonoBehaviour
     {
         if (checkedPlacement) return; // if already checked placement, return 
 
-        if (collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Base")) // only run stacking logic if we hit another box or the base platform
+        // --- Existing stacking logic ---
+        if (collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Base"))
         {
             CheckOverlap(collision); // call function to measure horizontal overlap
             checkedPlacement = true; // mark current box as checked so we do not recheck it 
+        }
+
+        // --- New win barrier check ---
+        if (collision.gameObject.CompareTag("WinBarrier")) // make sure your barrier is tagged
+        {
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.WinGame(); // trigger win
+            }
         }
     }
 
@@ -42,6 +53,8 @@ public class BoxCollision : MonoBehaviour
 
         if (overlap >= requiredOverlap)
         {
+            Debug.Log("HIT!");
+            //GameManager.instance.BoxPlaced();
             // If at least half of the box is supported:
             rb.linearVelocity = Vector2.zero; // stop all movement 
             rb.angularVelocity = 0f; // stop any rotation 
@@ -63,9 +76,9 @@ public class BoxCollision : MonoBehaviour
 
         else
         {
-            // If less than half is supported:
-
+            // If less than half is supported
             rb.freezeRotation = false; // allow box to rotate and gravity + physics will cause it to fall and tip 
+            Destroy(gameObject, 1f);
         }
     }
 }
