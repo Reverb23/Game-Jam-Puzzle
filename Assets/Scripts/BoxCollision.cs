@@ -4,6 +4,7 @@ public class BoxCollision : MonoBehaviour
 {
 
     public GameObject snapEffect;
+    [SerializeField] private GameManager gm;
 
     private bool checkedPlacement = false; // prevents placement logic to keep running, can only be checked once 
 
@@ -17,6 +18,8 @@ public class BoxCollision : MonoBehaviour
             CheckOverlap(collision); // call function to measure horizontal overlap
             checkedPlacement = true; // mark current box as checked so we do not recheck it 
         }
+
+        
     }
 
     void CheckOverlap(Collision2D collision) // calculates if placement of box is correct 
@@ -42,6 +45,8 @@ public class BoxCollision : MonoBehaviour
 
         if (overlap >= requiredOverlap)
         {
+            Debug.Log("HIT!");
+            GameManager.instance.BoxPlaced();
             // If at least half of the box is supported:
             rb.linearVelocity = Vector2.zero; // stop all movement 
             rb.angularVelocity = 0f; // stop any rotation 

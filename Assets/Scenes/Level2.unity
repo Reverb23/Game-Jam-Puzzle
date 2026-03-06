@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 7802092}
   - component: {fileID: 7802091}
   - component: {fileID: 7802090}
-  - component: {fileID: 7802089}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -158,18 +157,6 @@ RectTransform:
   m_AnchoredPosition: {x: 14.208557, y: -51.798553}
   m_SizeDelta: {x: 109.361, y: 33.069}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7802089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7802087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c84cd63571553047b606895df33b34d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!114 &7802090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,7 +1229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1524410037865897927, guid: 017f3863d2800dc4f8bab5e06731dd6e, type: 3}
+  m_Sprite: {fileID: -7726920385578837799, guid: 4948348a64701a542866091a509bf464, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1535,7 +1522,6 @@ GameObject:
   - component: {fileID: 1002713506}
   - component: {fileID: 1002713505}
   - component: {fileID: 1002713504}
-  - component: {fileID: 1002713503}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -1562,18 +1548,6 @@ RectTransform:
   m_AnchoredPosition: {x: 155.5, y: 44.824966}
   m_SizeDelta: {x: 109.361, y: 33.069}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1002713503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002713501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c84cd63571553047b606895df33b34d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!114 &1002713504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,7 +1654,6 @@ GameObject:
   - component: {fileID: 1146954355}
   - component: {fileID: 1146954354}
   - component: {fileID: 1146954353}
-  - component: {fileID: 1146954352}
   m_Layer: 5
   m_Name: Next Level Button
   m_TagString: Untagged
@@ -1707,25 +1680,6 @@ RectTransform:
   m_AnchoredPosition: {x: 155.50027, y: 90.113525}
   m_SizeDelta: {x: 109.36, y: 35.629}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1146954352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146954350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7f9b876695f954e86edc3c3fa9eb0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  maxHealth: 3
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  boxesNeededToWin: 10
-  startUI: {fileID: 0}
-  winPanel: {fileID: 0}
-  losePanel: {fileID: 0}
 --- !u!114 &1146954353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,7 +1756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1524410037865897927, guid: 017f3863d2800dc4f8bab5e06731dd6e, type: 3}
+  m_Sprite: {fileID: 5311401401569764991, guid: 2813a58c2cbc9aa41baa2dd5d1c9894a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

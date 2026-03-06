@@ -80,14 +80,13 @@ public class GameManager : MonoBehaviour
         {
             LoseGame();
         }
-
     }
 
     // Called when a box is successfully stacked
     // Increments a counter, game won when meet target number
     public void BoxPlaced()
     {
-        if (!gameStarted) return;
+        //if (!gameStarted) return;
 
         boxesStacked++;
         Debug.Log("Boxes stacked: " + boxesStacked);
