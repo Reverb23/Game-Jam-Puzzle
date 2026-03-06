@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class WinZone : MonoBehaviour
 {
     public float requiredStayTime = 1.5f; // Time stack must stay above height
-    private float stayTime = 1f;
+    private float stayTime = 0f;
     private bool boxInside = false;
     public string LoseUI; // Name of the lose scene to load
     public string winPanel;
