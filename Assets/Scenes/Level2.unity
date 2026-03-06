@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 482950416}
   m_Layer: 0
   m_Name: Winzone
-  m_TagString: Untagged
+  m_TagString: WinBarrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -868,6 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   requiredStayTime: 2
   LoseUI: 
+  winPanel: 
 --- !u!212 &482950419
 SpriteRenderer:
   m_ObjectHideFlags: 0
